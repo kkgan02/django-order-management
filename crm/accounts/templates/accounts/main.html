@@ -16,10 +16,30 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <style>
+      #logo {
+      }
+      body {
+        background-color: #ebeff5;
+      }
+      #total-orders {
+        background-color: #4cb4c7;
+      }
+      #orders-delivered {
+        background-color: #7abecc;
+      }
+      #orders-pending {
+        background-color: #7cd1c0;
+      }
+    </style>
   </head>
   <body>
-    {% include 'accounts/navbar.html'%} {% block content %} {% endblock %}
-    <hr />
+    {% include 'accounts/navbar.html'%}
+    <div class="container-fluid">
+      {% block content %}
+      {% endblock %}
+    </div>
+    <hr/>
     <h5>Footer</h5>
   </body>
 </html>
