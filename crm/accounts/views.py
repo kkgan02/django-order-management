@@ -6,7 +6,20 @@ from .models import *
 def home(request):
     orders = Order.objects.all()
     customers = Customer.objects.all()
-    context = {"orders": orders, "customers": customers}
+
+    total_orders = orders.count()
+    total_customers = customers.count()
+    delivered = orders.filter(status="Delivered").count()
+    pending = orders.filter(status="Pending").count()
+
+    context = {
+        "orders": orders,
+        "customers": customers,
+        "total_orders": total_orders,
+        "total_customers": total_customers,
+        "delivered": delivered,
+        "pending": pending,
+    }
     return render(request, "accounts/dashboard.html", context)
 
 
