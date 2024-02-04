@@ -37,10 +37,11 @@ def customer(request, pk_test):
     return render(request, "accounts/customer.html", context)
 
 
-def createOrder(request):
+def createOrder(request, pk):
+    customer = Customer.objects.get(id=pk)
     form = OrderForm()
     if request.method == "POST":
-        form = OrderForm(request.POST)
+        form = OrderForm(request.POST, instance=customer)
         if form.is_valid():
             form.save()
             return redirect("/")
