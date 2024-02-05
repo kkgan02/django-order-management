@@ -1,4 +1,5 @@
-{% extends 'accounts/main.html' %} {% block content %}
+{% extends 'accounts/main.html' %} 
+{% block content %}
 <br />
 <div class="row">
   <div class="col-md">
@@ -53,7 +54,7 @@
       <table class="table table-sm">
         <tr>
           <th>Product</th>
-          <th>Category</th>
+          <th>Note</th>
           <th>Date Ordered</th>
           <th>Status</th>
           <th>Update</th>
@@ -62,7 +63,7 @@
         {% for order in orders %}
         <tr>
           <td>{{order.product}}</td>
-          <td>{{order.product.category}}</td>
+          <td>{{order.note}}</td>
           <td>{{order.date_created}}</td>
           <td>{{order.status}}</td>
           <td>
