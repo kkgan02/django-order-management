@@ -6,6 +6,16 @@ from .forms import OrderForm
 from .filters import OrderFilter
 
 
+def registerPage(request):
+    context = {}
+    return render(request, "ccounts/register.html", context)
+
+
+def loginPage(request):
+    context = {}
+    return render(request, "ccounts/login.html", context)
+
+
 def home(request):
     orders = Order.objects.all()
     customers = Customer.objects.all()
