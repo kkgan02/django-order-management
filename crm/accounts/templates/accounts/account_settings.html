@@ -19,10 +19,12 @@
       <hr />
       <h3 style="text-align: center">Account Settings</h3>
       <hr />
+      {% comment %}
       <img
         class="profile-pic"
         src="{{request.user.customer.profile_pic.url}}"
       />
+      {% endcomment %}
     </div>
   </div>
   <div class="col-md-9">
